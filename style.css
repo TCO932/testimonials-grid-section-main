@@ -1,0 +1,246 @@
+:root {
+    --color-purple: #733fc8;
+    --color-white-primary: #ffffff;
+    --color-white-secondary: #ecf2f8;
+    --color-white-alpha: rgba(255, 255, 255, 0.4);
+    --color-steel: #49556b;
+    --color-steel-dark: #18202d;
+    
+    --spacing-05: 0.125rem;
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-5: 1.25rem;
+    --spacing-6: 1.5rem;
+    --spacing-7: 1.75rem;
+    --spacing-8: 2rem;
+    --spacing-9: 2.25rem;
+    --spacing-12: 3rem;
+    --spacing-16: 4rem;
+    --spacing-20: 5rem;
+
+    font-family: "Barlow", sans-serif;
+}
+
+body, h1, p {
+    margin: 0;
+}
+
+body {
+    background-color: var(--color-white-secondary);
+}
+
+body>main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+    padding: var(--spacing-20) var(--spacing-8);
+}
+
+
+article {
+    border-radius: 8px;
+    padding: var(--spacing-8);
+    box-shadow: 24px 24px 72px -40px rgba(34, 60, 80, 0.6);
+}
+
+.author {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-4);
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-05)
+}
+
+.name>p:first-child {
+    font-weight: 400;
+    font-size: 0.8rem;
+    font-style: normal;
+}
+
+.name>p:last-child {
+    font-weight: 400;
+    font-size: 0.7rem;
+    font-style: normal;
+    opacity: 0.6;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid;
+}
+
+article h1 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-style: normal;
+    margin-bottom: var(--spacing-4);
+    line-height: 1.3;
+}
+
+article>main>p {
+    font-weight: 450;
+    font-size: 0.9rem;
+    font-style: normal;
+    line-height: 1.4;
+}
+
+
+.daniel {
+    color: var(--color-white-primary);
+    background-color: var(--color-purple);
+    background-image: url('images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - var(--spacing-8)) 0px;
+
+}
+
+.daniel img {
+    border-color: var(--color-white-alpha);
+}
+
+.daniel .name>p {
+    color: var(--color-white-primary);
+}
+
+.daniel>main {
+    color: var(--color-white-alpha);
+}
+
+
+.jonathan {
+    color: var(--color-white-primary);
+    background-color: var(--color-steel);
+}
+
+.jonathan img {
+    border-color: var(--color-white-alpha);
+}
+
+.jonathan .name>p:first-child {
+}
+
+.jonathan .name>p:last-child {
+    opacity: 0.6;
+}
+
+.jonathan>main>p {
+    opacity: 0.6;
+}
+
+
+.jeanette {
+    color: var(--color-steel);
+    background-color: var(--color-white-primary);
+}
+
+.jeanette img {
+    border-color: var(--color-white-alpha);
+}
+
+.jeanette .name>p:first-child {
+    font-weight: 600;
+}
+
+.jeanette .name>p:last-child {
+    opacity: 0.6;
+}
+
+.jeanette>main>p {
+    opacity: 0.75;
+}
+
+
+.patrick {
+    color: var(--color-white-primary);
+    background-color: var(--color-steel-dark);
+}
+
+.patrick img {
+    border-color: var(--color-purple);
+}
+
+.patrick .name>p:first-child {
+    color: var(--color-white-primary);
+}
+
+.patrick .name>p:last-child {
+    opacity: 0.5;
+}
+
+.patrick>main {
+    opacity: 0.6;
+}
+
+
+.kira {
+    color: var(--color-steel);
+    background-color: var(--color-white-primary);
+}
+
+.kira img {
+    border-color: var(--color-white-alpha);
+}
+
+.kira .name>p:first-child {
+    font-weight: 600;
+}
+
+.kira .name>p:last-child {
+    opacity: 0.6;
+}
+
+.kira>main>p {
+    opacity: 0.75;
+}
+
+@media (min-width: 750px) {
+    html {
+        font-size: 14px;
+    }
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    body>main {
+        max-width: 1110px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            'daniel daniel jonathan kira'
+            'jeanette patrick patrick kira';
+    }
+
+    .daniel {
+        grid-area: daniel;
+    }
+
+    .jonathan {
+        grid-area: jonathan;
+    }
+
+    .jeanette {
+        grid-area: jeanette;
+    }
+
+    .patrick {
+        grid-area: patrick;
+    }
+
+    .kira {
+        grid-area: kira;
+    }
+}
